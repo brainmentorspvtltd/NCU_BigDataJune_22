@@ -1,0 +1,4 @@
+for windows users
+- type input_file.txt | python mapper.py | sort | python reducer.py
+for linux users
+- cat input_file.txt | python mapper.py | sort -k1,1 | python reducer.py
