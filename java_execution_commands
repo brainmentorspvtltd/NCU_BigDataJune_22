@@ -1,0 +1,5 @@
+Commands for java
+- hdfs dfs -mkdir /input_data
+- hdfs dfs -put file_name.txt /input_data
+- hadoop jar word_count.jar DriverCode /input_data/file_name.txt /output_dir
+- hadoop dfs -cat /output_dir/*
