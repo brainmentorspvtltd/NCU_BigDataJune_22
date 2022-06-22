@@ -5,3 +5,9 @@ for linux users
 
 Execution using hadoop
 hadoop jar hadoop-streaming-3.3.0.jar -input /mr_data/input_file.txt -output /mr_output_python -mapper mapper.py -reducer reducer.py
+
+Execution of MrJob without Using Hadoop
+python WordCount.py file_name.txt
+
+Execution of MrJob Using Hadoop
+python WordCount.py hdfs:///mr_data/input_file.txt -r hadoop --hadoop-streaming-jar hadoop-streaming-3.3.0.jar
