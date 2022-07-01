@@ -1,0 +1,42 @@
+PIG Commands
+- Basic
+  - Data Types
+--------------------------
+byte	- 1 byte
+short	- 2 byte
+int	- 4 byte
+long	- 8 byte
+-------------------------------
+Query_1
+data = LOAD '/D:/Datasets/olympics/summer.csv' using PigStorage(',') as (Year:int, City:chararray, Sport:chararray, Discipline:chararray, Athlete:chararray, Country:chararray, Gender:chararray, Event:chararray, Medal:chararray);
+
+Query_2
+first_5 = LIMIT data 5;
+dump first_5;
+
+Query_3
+gold_data = filter data by Medal == 'Gold';
+gold_5 = LIMIT gold_data 5;
+
+silver_data = filter data by Medal == 'Silver';
+bronze_data = filter data by Medal == 'Bronze';
+
+Query_4
+group_data = GROUP gold_data by Athlete;
+x = filter data by Athlete == 'HAJOS, Alfred';
+
+Query_5
+gold_count = FOREACH group_data GENERATE group as athlete_count, COUNT(gold_data.Medal) as MedalCount;
+
+Query_6
+most_gold = ORDER gold_count BY MedalCount DESC; 
+gold_limit = LIMIT most_gold 6;
+dump gold_limit;
+====================================================
+Questions
+- Get Most Medals Won by Female Athlete
+- Get Total Medal Won by India
+- Most Medals won by which Country..?
+
+
+
