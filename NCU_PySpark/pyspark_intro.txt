@@ -1,0 +1,14 @@
+Spark
+- Open Source Analytical Processing Engine
+- Immutable
+- Fault tolerant
+- Cache & Persistence
+- In-Memory
+- Real time processing using Streaming and Kafka
+PySpark - Spark Library written in Python
+
+Stream
+- continuous flow of data
+
+Buffering    - chunk of data that is coming from somewhere
+Streaming   - continuous flow of data coming from somewhere
